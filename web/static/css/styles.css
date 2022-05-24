@@ -1,0 +1,746 @@
+:root {
+    --theme-color: #a94fae;
+    --visited-color: #FFBFFF;
+    --hover-color: #E486E8;
+    --active-color: #FFA2FF;
+    --fifth-color: #C66ACB;
+    --dark-background-color: #1A1A1A;
+    --light-background-color: #262626;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    height: auto;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: var(--dark-background-color);
+    border-bottom: 3px solid var(--theme-color);
+    z-index: 1;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 1.4vh 1.2vw;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: var(--theme-color);
+}
+
+.navbar .icon {
+    display: none;
+    font-size: 14px;
+}
+
+.dropdown {
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    padding: 1.4vh 1.2vw;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    color: white;
+    width: auto;
+    text-align: center;
+    display: flex;
+}
+
+.dropdown-content {
+    padding-top: 3px;
+    display: none;
+    position: absolute;
+    background-color: var(--theme-color);
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: opacity 1s ease-out;
+    opacity: 0;
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: var(--theme-color);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    height: auto;
+}
+
+.dropdownIcon {
+    display: inline;
+    height: 16px;
+    width: 16px;
+}
+
+#mainframe {
+    background-color: var(--light-background-color);
+    min-height: 100vh;
+}
+
+#mainContent {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+#mainImg {
+    font-size: 24px;
+    width: 100%;
+    transition: all .5s ease-in;
+    height: calc(100vh - (2 * (1.4vh) + 3px + 19px));
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+}
+
+.imgNumber {
+    color: #f2f2f2;
+    font-size: 2em;
+    padding: 2px;
+    top: 0;
+}
+
+.imgButton {
+    background-color: transparent;
+    box-sizing: border-box;
+    width: auto;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-image: initial;
+    margin: 0.4em 0.35em;
+    padding: 0;
+    transition: all 0.2s ease-out;
+}
+
+.imgButton:hover {
+    border-color: var(--theme-color);
+    transition: all 0.2s ease-in;
+}
+
+.imgButtonItself {
+    color: white;
+    display: block;
+    padding: 0.7em 2em;
+    text-decoration: none;
+    transition: all 0.2s ease-out;
+}
+
+.imgButton:hover .imgButtonItself {
+    color: var(--theme-color);
+    background-color: var(--dark-background-color);
+    transition: all 0.2s ease-in;
+}
+
+.dropbtn > #icon {
+    margin-left: 5px;
+    display: flex;
+    align-self: end;
+    transition: all .2s ease-out;
+}
+
+.dropdown:hover .dropbtn > #icon {
+    transform: rotate(-180deg);
+    transition: all .2s ease-in;
+}
+
+#imgMenu {
+    height: 2vw;
+    width: 100%;
+    display: flex;
+    margin-top: 1vh;
+}
+
+#imgMenuLeftArrow, #imgMenuRightArrow {
+    height: calc(100% - 2 * (3px));
+    width: calc(5% - 2 * (3px));
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease-out;
+}
+
+#imgMenuLeftArrow {
+    margin-right: 2%;
+}
+
+#imgMenuRightArrow {
+    margin-left: 2%;
+}
+
+#imgMenuLeftArrow:hover, #imgMenuRightArrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease-in;
+}
+
+.imgMenuItem {
+    margin: 0 2%;
+    height: calc(100% - 2 * (3px));
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    width: calc(17.5% - 2 * (3px));
+    transition: background-color 0.2s ease-out;
+}
+
+.imgMenuSelected {
+    background-color: white;
+}
+
+.imgMenuItem:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease-in;
+}
+
+#itemList {
+    height: 2vw;
+    display: flex;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top: 5vw;
+    background-color: rgba(26, 26, 26, 0.75);
+    padding: 2vh 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--theme-color);
+    bottom: 0;
+    position: absolute;
+    width: calc(100vw - (2 * (7vw) + 2 * 3px));
+}
+
+.unselectedItem {
+    height: calc(100% - 2 * (3px));
+    width: 20%;
+    margin: 0 5%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+}
+
+.unselectedItem:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease-in;
+}
+
+.selectedItem {
+    height: calc(100% - 2 * (3px));
+    width: 20%;
+    margin: 0 2.5%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    transition: background-color 0.2s ease-out;
+    background-color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+}
+
+.selectedItem:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.2s ease-in;
+}
+
+.infoContainer {
+    margin-right: 7vw;
+    margin-top: 40vh;
+    text-align: right;
+    background-color: rgba(26, 26, 26, 0.75);
+    margin-left: 50vw;
+    padding: 1vh 1vw;
+    border-color: rgba(169, 79, 174, 1);
+    border-width: 3px;
+    border-style: solid;
+}
+
+#imgTitle {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    transition: all .5s ease-in;
+}
+
+#imgTag {
+    color: white;
+    font-size: 1.3em;
+    text-align: justify;
+}
+
+.rightArrow, .leftArrow {
+    width: 5vw;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    height: calc(100vh - (2 * (1.4vh) + 3px + 19px));
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-right-width: 3px;
+    border-right-color: rgba(169, 79, 174, 1);
+    border-right-style: solid;
+    transition: background-color 0.1s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightArrow:hover, .leftArrow:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.1s ease-in;
+}
+
+.rightArrow {
+    right: 0;
+    border-right-width: 0;
+    border-left-width: 3px;
+    border-left-color: rgba(169, 79, 174, 1);
+    border-left-style: solid;
+}
+
+.arrowItself {
+    margin: 0;
+    position: absolute;
+}
+
+.dropdown-animation {
+    animation: growDown 200ms ease-in forwards;
+    transform-origin: top center;
+}
+
+#maintitle {
+    margin-top: 45px;
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    color: var(--theme-color);
+}
+
+.section {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.imgsection, .textsection {
+    height: 100%;
+    float: left;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgsection a {
+    height: auto;
+    width: 80%;
+    align-self: center;
+}
+
+.secimg {
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--theme-color);
+    justify-self: center;
+    width: 100%;
+    border-radius: 18px;
+}
+
+.secimg:hover {
+    width: 80%;
+}
+
+.sectitle {
+    font-size: 2.5em;
+    text-align: center;
+    color: var(--theme-color);
+    align-self: center;
+    margin-top: 5%;
+}
+
+.secdes {
+    text-align: center;
+    font-size: 1.75em;
+    color: var(--theme-color);
+    margin-top: 5%;
+}
+
+.secdes p {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.secdes::first-letter {
+    font-weight: bold;
+}
+
+.placeholderPlace {
+    width: 100%;
+    height: 5vh;
+}
+
+.gradientPlaceholder {
+    width: 100%;
+    height: 5vh;
+    background-image: linear-gradient(var(--light-background-color), var(--dark-background-color));
+}
+
+#foot {
+    width: 100%;
+    background-color: var(--dark-background-color);
+    padding-bottom: 2vh;
+    display: flex;
+}
+
+.footersection {
+    width: 50%;
+    display: block;
+    float: left;
+}
+
+.foottitle {
+    font-size: 1.25em;
+    text-align: center;
+    color: var(--theme-color);
+    font-weight: bold;
+}
+
+.footdescription {
+    font-size: 1em;
+    color: #777777;
+    text-align: center;
+    display: block;
+}
+
+.footdescription a {
+    color: #777777;
+}
+
+.footdescription a:hover {
+    color: #EEEEEE;
+}
+
+.errorTitle {
+    color: red;
+}
+
+#links {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#links a {
+    width: auto;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+#links .subtitle {
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+#links a .subtitle {
+    margin: 0;
+}
+
+.subtitle {
+    width: auto;
+    font-size: 2em;
+    text-align: center;
+    color: var(--theme-color);
+}
+
+#tabela {
+    width: 100%;
+    display: flex;
+}
+
+#tabela table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+
+#tabela table th, #tabela table td {
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--theme-color);
+    border-radius: 6px;
+    color: #EEEEEE;
+    padding: 1vh 1vw;
+}
+
+#tabela table td a {
+    color: #EEEEEE;
+}
+
+#tabela table td a:hover {
+    color: #777777;
+}
+
+#tabela table th {
+    font-size: 2em;
+}
+
+#tabela table td {
+    font-size: 1.5em;
+}
+
+#commentSection {
+    width: 40vw;
+    margin-left: 30vw;
+    color: var(--theme-color);
+}
+
+#commentSection form {
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--theme-color);
+    border-radius: 6px;
+    padding: 2.5vh 5%;
+    margin-top: 0.5vh;
+}
+
+#commentSection input, #commentSection textarea {
+    margin: 5px 0;
+}
+
+#commentSection form textarea {
+    width: 100%;
+}
+
+#gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.galleryItem {
+    width: 10vw;
+    padding: 1vh 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.itemSelector {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemImage {
+    width: 95%;
+    padding: 2.5%;
+    height: auto;
+}
+
+#upload form p label {
+    color: var(--theme-color);
+}
+
+.galleryItem span {
+    text-align: center;
+}
+
+.itemTitle {
+    font-size: 2em;
+    color: var(--visited-color);
+}
+
+.itemAuthor {
+    color: var(--fifth-color);
+}
+
+.itemLink {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemLink:hover {
+    background-color: var(--dark-background-color);
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0);
+    }
+
+    80% {
+        transform: scaleY(1.1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .navbar a:not(:first-child), .dropdown .dropbtn {
+        display: none;
+    }
+
+    .navbar a.icon {
+        float: right;
+        display: block;
+    }
+
+    .infoContainer {
+        margin-right: 12vw;
+        margin-top: 40vh;
+        margin-left: 40vw;
+    }
+
+    .leftArrow, .rightArrow {
+        width: 10vw;
+    }
+
+    #itemList {
+        height: 5vh;
+        margin-left: 12vw;
+        width: calc(100vw - (2 * (12vw) + 2 * 3px));
+    }
+
+    .dropbtn > #icon {
+        display: inline-flex;
+    }
+
+    #imgMenu {
+        height: 5vh;
+    }
+
+    .infoContainer {
+        margin-left: 12vw;
+        margin-top: 50vh;
+    }
+
+    .section {
+        display: block;
+    }
+
+    .imgsection, .textsection {
+        width: 100%;
+        display: block;
+        margin-bottom: 1vh;
+    }
+
+    .secimg {
+        margin: 0;
+    }
+
+    .imgMenuItem {
+        width: calc(15% - 2 * (3px));
+    }
+
+    #imgMenuLeftArrow, #imgMenuRightArrow {
+        width: calc(10% - 2 * (3px));
+    }
+
+    #imageShow img {
+        width: 98vw;
+    }
+
+    #imageLink {
+        margin-left: 1vw;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .navbar.responsive {
+        position: relative;
+    }
+
+    .navbar.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .navbar.responsive .dropdown {
+        float: none;
+    }
+
+    .navbar.responsive .dropdown-content {
+        position: relative;
+    }
+
+    .navbar.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}
